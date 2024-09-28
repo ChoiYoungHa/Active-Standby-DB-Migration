@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  mysql:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - mysql_meta:/var/lib/mysql
+      - ./mysql_dumps:/mnt/dumps  # 호스트의 ./mysql_dumps를 컨테이너의 /mnt/dumps에 마운트
+
+volumes:
+  mysql_meta:
+
